@@ -1,7 +1,21 @@
-# 확장자가 csv, xlsx, vcf인 큰 데이터 파일은 업로드 제외
+# 1. 실제 데이터 파일 제외 (용량이 크거나 민감한 정보)
 data/*.csv
 data/*.xlsx
 data/*.vcf
+data/*.maf
 
-# 하지만 샘플 파일은 예외적으로 업로드 허용
+# 2. 하지만 샘플 데이터(example_)는 제외하지 않고 업로드 허용
 !data/example_*.csv
+!data/example_*.xlsx
+
+# 3. 분석 결과 파일 제외 (코드를 실행하면 새로 생성되므로)
+results/*.tiff
+results/*.pdf
+results/*.csv
+results/*.xlsx
+
+# 4. OS 및 에디터 임시 파일 제외
+.DS_Store
+Thumbs.db
+.Rhistory
+.RData
